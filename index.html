@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditi | MMS Student • Creative Thinker • Future Professional</title>
+  <meta name="description" content="Personal portfolio of Aditi — MMS student, creative thinker, and future professional passionate about continuous learning, thoughtful strategy, and personal growth." />
+  
+  <!-- Google Fonts: Playfair Display for editorial elegance & Plus Jakarta Sans for modern clarity -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       Palette: Deep Plum (#3B214D), Dusty Rose (#B76E79), Warm Cream (#FAF7F5),
+                Cards (#FFFFFF), Text (#29252A)
+       ========================================================================== */
+    :root {
+      /* Core Palette */
+      --color-primary: #3B214D;         /* Deep Plum */
+      --color-primary-dark: #271434;    /* Rich Dark Plum */
+      --color-primary-light: #53336B;   /* Medium Plum */
+      --color-accent: #B76E79;          /* Dusty Rose */
+      --color-accent-soft: #D49CA3;     /* Soft Rose */
+      --color-accent-subtle: rgba(183, 110, 121, 0.12); /* Subtle Rose Tint */
+      --color-accent-glow: rgba(183, 110, 121, 0.28);
+      
+      --color-bg: #FAF7F5;              /* Warm Cream */
+      --color-bg-alt: #F3ECE7;          /* Soft Warm Taupe/Linen */
+      --color-card: #FFFFFF;            /* Pure Crisp White */
+      --color-card-subtle: #FDFBF9;
+      
+      --color-text: #29252A;            /* Deep Plum-Charcoal */
+      --color-text-muted: #665D68;      /* Muted Warm Slate */
+      --color-text-light: #8E8491;      /* Light Caption Text */
+      
+      --color-border: #EADBDF;          /* Delicate Rose-Taupe Border */
+      --color-border-subtle: #F0E6E3;   /* Extra Soft Border */
+      --color-border-hover: #B76E79;    /* Dusty Rose Highlight */
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(59, 33, 77, 0.04);
+      --shadow-md: 0 10px 30px -4px rgba(59, 33, 77, 0.07), 0 4px 12px -2px rgba(59, 33, 77, 0.03);
+      --shadow-lg: 0 20px 45px -8px rgba(59, 33, 77, 0.12), 0 8px 18px -4px rgba(183, 110, 121, 0.08);
+      --shadow-floating: 0 16px 36px -6px rgba(59, 33, 77, 0.15);
+      --shadow-glow: 0 0 45px -5px rgba(183, 110, 121, 0.35);
+
+      /* Typography */
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* Layout & Spacing */
+      --max-width: 1160px;
+      --nav-height: 72px;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+      
+      /* Transitions */
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(183, 110, 121, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 25%, rgba(59, 33, 77, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(183, 110, 121, 0.07) 0%, transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Selection */
+    ::selection {
+      background: rgba(183, 110, 121, 0.3);
+      color: var(--color-primary);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D9CBC6;
+      border-radius: 5px;
+      border: 2px solid var(--color-bg);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-accent);
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & GLOBAL UTILITIES
+       ========================================================================== */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color-primary);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    .section {
+      padding: 7rem 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background-color: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.15rem;
+      border-radius: var(--radius-full);
+      background: rgba(183, 110, 121, 0.1);
+      border: 1px solid rgba(183, 110, 121, 0.28);
+      color: var(--color-primary);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      box-shadow: 0 0 8px var(--color-accent);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px -4px rgba(59, 33, 77, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -4px rgba(59, 33, 77, 0.35), 0 0 18px var(--color-accent-glow);
+      color: #FFFFFF;
+    }
+
+    .btn-secondary {
+      background: var(--color-card);
+      border-color: var(--color-border);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background: #FFFFFF;
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-icon {
+      font-size: 1.05rem;
+      transition: transform 0.25s ease;
+    }
+
+    .btn:hover .btn-icon {
+      transform: translateX(4px);
+    }
+
+    /* White Cards with Warm Borders */
+    .card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: var(--color-accent-soft);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ==========================================================================
+       FLOATING NAVIGATION BAR
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 1.25rem;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0.65rem 1.5rem;
+      background: rgba(250, 247, 245, 0.88);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px -10px rgba(59, 33, 77, 0.08);
+      transition: var(--transition-smooth);
+    }
+
+    .navbar.scrolled .nav-wrapper {
+      background: rgba(255, 255, 255, 0.94);
+      border-color: var(--color-border);
+      box-shadow: 0 12px 35px -5px rgba(59, 33, 77, 0.12);
+    }
+
+    /* Signature Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--color-primary);
+    }
+
+    .nav-signature {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .nav-signature::after {
+      content: '.';
+      color: var(--color-accent);
+      font-size: 2rem;
+      line-height: 0;
+      position: relative;
+      top: -2px;
+      margin-left: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--radius-sm);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--color-accent);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.4rem;
+      font-size: 0.88rem;
+    }
+
+    /* Mobile Hamburger */
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.3rem;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-primary);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding-top: calc(var(--nav-height) + 5.5rem);
+      padding-bottom: 6rem;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .name-highlight {
+      color: var(--color-primary);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title .name-highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: rgba(183, 110, 121, 0.22);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.01em;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin-bottom: 2.25rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.15rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Hero Portrait Area with Floating Badges */
+    .hero-portrait-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Subtle Plum/Rose Glow Backdrop */
+    .hero-backdrop-glow {
+      position: absolute;
+      width: 380px;
+      height: 480px;
+      background: radial-gradient(circle at 50% 45%, rgba(183, 110, 121, 0.24) 0%, rgba(59, 33, 77, 0.12) 60%, transparent 80%);
+      filter: blur(40px);
+      z-index: 0;
+      border-radius: 50%;
+      animation: gentlePulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentlePulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      100% { transform: scale(1.08); opacity: 1; }
+    }
+
+    /* Large Rounded-Rectangle Portrait Frame */
+    .portrait-frame {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 330px;
+      height: 440px;
+      background: #FFFFFF;
+      border-radius: var(--radius-xl);
+      padding: 10px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg), 0 0 35px rgba(183, 110, 121, 0.15);
+      transition: var(--transition-smooth);
+    }
+
+    .portrait-frame:hover {
+      border-color: var(--color-accent-soft);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg), 0 0 45px rgba(183, 110, 121, 0.25);
+    }
+
+    .portrait-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: calc(var(--radius-xl) - 8px);
+      background: linear-gradient(145deg, #F9F4F2 0%, #EDE2DF 50%, #E3D4D1 100%);
+      border: 1px solid rgba(183, 110, 121, 0.25);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Elegant Editorial Placeholder Visual */
+    .portrait-monogram-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2px solid var(--color-border);
+      box-shadow: 0 10px 25px rgba(59, 33, 77, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .portrait-monogram-circle::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px dashed var(--color-accent);
+      opacity: 0.6;
+    }
+
+    .portrait-monogram-text {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .portrait-meta-name {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .portrait-meta-tag {
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .portrait-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--color-accent);
+      opacity: 0.4;
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+
+    /* Floating Information Cards */
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1.15rem;
+      box-shadow: var(--shadow-floating);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition-smooth);
+    }
+
+    .floating-card:hover {
+      transform: scale(1.05);
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .floating-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--color-accent-subtle);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      border: 1px solid rgba(183, 110, 121, 0.2);
+    }
+
+    .floating-text-primary {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .floating-text-sub {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    /* Positions & Floating Keyframe Animations */
+    .float-card-1 {
+      top: 15px;
+      left: -35px;
+      animation: floatMotion1 5s ease-in-out infinite alternate;
+    }
+
+    .float-card-2 {
+      top: 48%;
+      right: -40px;
+      animation: floatMotion2 6s ease-in-out infinite alternate;
+    }
+
+    .float-card-3 {
+      bottom: 20px;
+      left: -20px;
+      animation: floatMotion3 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatMotion1 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(-1deg); }
+    }
+
+    @keyframes floatMotion2 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(10px) rotate(1deg); }
+    }
+
+    @keyframes floatMotion3 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-6px) rotate(1deg); }
+    }
+
+    /* ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== */
+    .about-card-container {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    .about-main-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 2.5rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .about-main-card::before {
+      content: '“';
+      font-family: var(--font-serif);
+      font-size: 6.5rem;
+      line-height: 1;
+      color: var(--color-accent);
+      opacity: 0.22;
+      position: absolute;
+      top: 1.25rem;
+      left: 2rem;
+      pointer-events: none;
+    }
+
+    .about-quote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      line-height: 1.75;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-narrative {
+      font-size: 1.02rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .value-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.4rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .value-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--color-accent-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+      border: 1px solid rgba(183, 110, 121, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .value-card:hover .value-icon {
+      background: var(--color-accent);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .value-title {
+      font-size: 1.15rem;
+      font-family: var(--font-serif);
+      margin-bottom: 0.4rem;
+      color: var(--color-primary);
+    }
+
+    .value-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       MY JOURNEY / EDUCATION SECTION
+       ========================================================================== */
+    .journey-box {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .journey-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2.75rem;
+      border-left: 2px solid var(--color-border);
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid var(--color-card);
+      box-shadow: 0 0 0 3px rgba(183, 110, 121, 0.35);
+    }
+
+    .journey-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .journey-degree {
+      font-size: 1.75rem;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .journey-subtitle-label {
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .journey-status-pill {
+      background: rgba(183, 110, 121, 0.12);
+      border: 1px solid rgba(183, 110, 121, 0.3);
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .journey-desc {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-top: 0.85rem;
+    }
+
+    .journey-focus-heading {
+      font-size: 0.92rem;
+      color: var(--color-primary);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .journey-focus-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .focus-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition-smooth);
+    }
+
+    .focus-item:hover {
+      border-color: var(--color-accent);
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .focus-item-icon {
+      font-size: 1.2rem;
+    }
+
+    .focus-item-text {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+       STRENGTHS SECTION
+       ========================================================================== */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .strength-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.85rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .strength-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .strength-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.35rem;
+      transition: var(--transition-smooth);
+    }
+
+    .strength-card:hover .strength-icon-box {
+      transform: scale(1.1) rotate(4deg);
+      background: var(--color-accent-subtle);
+      border-color: var(--color-accent);
+    }
+
+    .strength-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.65rem;
+      color: var(--color-primary);
+    }
+
+    .strength-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       PERSONAL GROWTH SECTION
+       ========================================================================== */
+    .growth-card {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 3.25rem 2.75rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .growth-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    }
+
+    .growth-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .growth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.15rem;
+      border-radius: var(--radius-full);
+      background: rgba(183, 110, 121, 0.12);
+      border: 1px solid rgba(183, 110, 121, 0.3);
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .growth-roadmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+      position: relative;
+    }
+
+    .roadmap-step {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.15rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .roadmap-step:hover {
+      background: #FFFFFF;
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .roadmap-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-accent-subtle);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.85rem;
+      border: 1px solid rgba(183, 110, 121, 0.25);
+    }
+
+    .roadmap-step-title {
+      font-size: 1.05rem;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .roadmap-step-desc {
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       INTERESTS SECTION
+       ========================================================================== */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.25rem;
+    }
+
+    .interest-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .interest-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .interest-banner {
+      height: 180px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .banner-travel {
+      background: linear-gradient(135deg, #3B214D 0%, #523169 50%, #76487E 100%);
+    }
+
+    .banner-photography {
+      background: linear-gradient(135deg, #4A2E44 0%, #68425F 50%, #B76E79 100%);
+    }
+
+    .banner-decor-ring {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+    }
+
+    .banner-icon-large {
+      font-size: 3.8rem;
+      z-index: 2;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+      transition: transform 0.4s ease;
+    }
+
+    .interest-card:hover .banner-icon-large {
+      transform: scale(1.15) rotate(4deg);
+    }
+
+    .interest-body {
+      padding: 2.25rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .interest-title {
+      font-size: 1.55rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+
+    .interest-desc {
+      font-size: 0.98rem;
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .interest-tag {
+      padding: 0.35rem 0.85rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+       MY AMBITION SECTION
+       ========================================================================== */
+    .ambition-card {
+      max-width: 940px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 4.5rem 3rem;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 25px 50px -10px rgba(59, 33, 77, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ambition-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(183, 110, 121, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ambition-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .ambition-statement {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: #FAF7F5;
+      letter-spacing: -0.015em;
+    }
+
+    .ambition-statement span {
+      color: #E6B2BA;
+      font-style: italic;
+    }
+
+    .ambition-text {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      max-width: 720px;
+      margin: 0 auto;
+      color: #EADBDF;
+    }
+
+    /* ==========================================================================
+       CONTACT / FINAL CTA SECTION
+       ========================================================================== */
+    .contact-card {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 4rem 2.5rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-title {
+      font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+
+    .contact-subtitle {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.75;
+    }
+
+    .contact-buttons-flex {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact-action-btn {
+      min-width: 175px;
+      padding: 0.95rem 2rem;
+    }
+
+    .contact-note {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--color-primary);
+      border: 1px solid var(--color-accent);
+      padding: 1rem 1.6rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 35px rgba(59, 33, 77, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 0.95rem;
+      z-index: 2000;
+      transform: translateY(140%);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      padding: 2.75rem 0;
+      border-top: 1px solid var(--color-border);
+      background: var(--color-bg);
+      margin-top: auto;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-copy {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-card);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .back-to-top:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ==========================================================================
+       SCROLL REVEAL ANIMATIONS
+       ========================================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.22s; }
+    .delay-3 { transition-delay: 0.32s; }
+    .delay-4 { transition-delay: 0.42s; }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 4rem;
+      }
+      
+      .hero-content {
+        margin: 0 auto;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-portrait-wrapper {
+        margin-top: 1rem;
+      }
+
+      .about-card-container {
+        grid-template-columns: 1fr;
+      }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 5rem 0;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: calc(var(--nav-height) + 1.25rem);
+        left: 1.25rem;
+        right: 1.25rem;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.25rem;
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition-smooth);
+        box-shadow: 0 20px 45px rgba(59, 33, 77, 0.15);
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .float-card-1 {
+        left: -10px;
+        top: 5px;
+      }
+
+      .float-card-2 {
+        right: -10px;
+      }
+
+      .float-card-3 {
+        left: -10px;
+        bottom: 5px;
+      }
+
+      .about-values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .growth-card {
+        padding: 2.25rem 1.5rem;
+      }
+
+      .ambition-card {
+        padding: 3.5rem 1.75rem;
+      }
+
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2.75rem;
+      }
+
+      .portrait-frame {
+        max-width: 290px;
+        height: 390px;
+      }
+
+      .floating-card {
+        padding: 0.6rem 0.85rem;
+        gap: 0.5rem;
+      }
+
+      .floating-icon-box {
+        width: 30px;
+        height: 30px;
+        font-size: 0.95rem;
+      }
+
+      .floating-text-primary {
+        font-size: 0.8rem;
+      }
+
+      .floating-text-sub {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR (Minimalist Glass Pill with Signature Logo)
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <nav class="nav-wrapper" aria-label="Main Navigation">
+        <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Aditi Portfolio Home">
+          <span class="nav-signature">Aditi</span>
+        </a>
+
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+          <li><a href="#journey" class="nav-link" id="link-journey">Journey</a></li>
+          <li><a href="#strengths" class="nav-link" id="link-strengths">Strengths</a></li>
+          <li><a href="#growth" class="nav-link" id="link-growth">Growth</a></li>
+          <li><a href="#interests" class="nav-link" id="link-interests">Interests</a></li>
+          <li><a href="#ambition" class="nav-link" id="link-ambition">Ambition</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <a href="#contact" class="btn btn-primary nav-cta" id="nav-contact-btn">Connect</a>
+          <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (Personal Profile with Portrait Frame & Floating Badges)
+         ========================================================================== -->
+    <section class="section hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Hero Content -->
+          <div class="hero-content reveal">
+            <div class="badge-pill">
+              <span class="badge-pill-dot"></span>
+              <span>Personal Portfolio</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Hi, I'm <span class="name-highlight">Aditi.</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+              MMS Student • Creative Thinker • Future Professional
+            </p>
+            
+            <p class="hero-description">
+              A hardworking and creative MMS student passionate about continuous learning, thoughtful strategy, and building a confident professional future.
+            </p>
+            
+            <div class="hero-actions">
+              <a href="#about" class="btn btn-primary" id="hero-about-btn">
+                <span>About Me</span>
+                <span class="btn-icon">↓</span>
+              </a>
+              <a href="#journey" class="btn btn-secondary" id="hero-journey-btn">
+                <span>My Journey</span>
+                <span class="btn-icon">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Hero Portrait Frame Area with Floating Info Cards -->
+          <div class="hero-portrait-wrapper reveal delay-2">
+            <!-- Plum / Rose Backdrop Glow -->
+            <div class="hero-backdrop-glow"></div>
+            
+            <!-- Large Rounded-Rectangle Portrait Frame -->
+            <div class="portrait-frame">
+              <div class="portrait-inner">
+                <div class="portrait-monogram-circle">
+                  <span class="portrait-monogram-text">A</span>
+                </div>
+                <h2 class="portrait-meta-name">Aditi</h2>
+                <p class="portrait-meta-tag">MMS Scholar</p>
+                <div class="portrait-divider"></div>
+              </div>
+            </div>
+
+            <!-- Floating Card 1: MMS Student -->
+            <div class="floating-card float-card-1">
+              <div class="floating-icon-box">🎓</div>
+              <div>
+                <div class="floating-text-primary">MMS Student</div>
+                <div class="floating-text-sub">Management Scholar</div>
+              </div>
+            </div>
+
+            <!-- Floating Card 2: Creative Mind -->
+            <div class="floating-card float-card-2">
+              <div class="floating-icon-box">✨</div>
+              <div>
+                <div class="floating-text-primary">Creative Mind</div>
+                <div class="floating-text-sub">Thoughtful Perspective</div>
+              </div>
+            </div>
+
+            <!-- Floating Card 3: Always Learning -->
+            <div class="floating-card float-card-3">
+              <div class="floating-icon-box">🌱</div>
+              <div>
+                <div class="floating-text-primary">Always Learning</div>
+                <div class="floating-text-sub">Continuous Growth</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">
+            <span>About Me</span>
+          </div>
+          <h2 class="section-title">Who I Am &amp; What Drives Me</h2>
+          <p class="section-subtitle">A blend of thoughtful reflection, creativity, and steady dedication.</p>
+        </div>
+
+        <div class="about-card-container">
+          
+          <!-- Main Quote & Narrative Card -->
+          <div class="about-main-card reveal delay-1">
+            <p class="about-quote">
+              "I’m Aditi, an MMS student with a curious mind and a strong desire to grow. I may be naturally shy, but I believe confidence is something that can be developed with consistent effort. I value patience, creativity, and continuous learning."
+            </p>
+            <p class="about-narrative">
+              My approach to academic and personal challenges is grounded in quiet determination. Rather than rushing, I focus on understanding concepts deeply and bringing thoughtful, well-crafted solutions to every project and collaboration.
+            </p>
+          </div>
+
+          <!-- 4 Values Grid -->
+          <div class="about-values-grid reveal delay-2">
+            <div class="value-card">
+              <div class="value-icon">💡</div>
+              <h3 class="value-title">Curious Mind</h3>
+              <p class="value-desc">Passionate about analyzing management concepts and real-world business dynamics.</p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">🎯</div>
+              <h3 class="value-title">Consistent Effort</h3>
+              <p class="value-desc">Building poise, confidence, and mastery through regular practice and discipline.</p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">✨</div>
+              <h3 class="value-title">Creative Thinking</h3>
+              <p class="value-desc">Approaching problem solving with an imaginative, structured, and aesthetic perspective.</p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">📚</div>
+              <h3 class="value-title">Lifelong Learning</h3>
+              <p class="value-desc">Committed to absorbing new insights, reading, and embracing constructive feedback.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MY JOURNEY / EDUCATION SECTION
+         ========================================================================== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">
+            <span>Academic Pathway</span>
+          </div>
+          <h2 class="section-title">My Journey</h2>
+          <p class="section-subtitle">Foundations of business acumen, leadership development, and strategic thinking.</p>
+        </div>
+
+        <div class="journey-box reveal delay-1">
+          <div class="journey-card">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              
+              <div class="journey-header-flex">
+                <div>
+                  <h3 class="journey-degree">Master of Management Studies (MMS)</h3>
+                  <p class="journey-subtitle-label">Postgraduate Management Education</p>
+                </div>
+                <span class="journey-status-pill">Current Education</span>
+              </div>
+
+              <p class="journey-desc">
+                Currently pursuing MMS with an emphasis on understanding modern organizational practices, leadership frameworks, and strategic business decision-making.
+              </p>
+
+              <h4 class="journey-focus-heading">
+                Key Academic &amp; Development Focus Areas:
+              </h4>
+
+              <div class="journey-focus-list">
+                <div class="focus-item">
+                  <span class="focus-item-icon">📊</span>
+                  <span class="focus-item-text">Business &amp; Management</span>
+                </div>
+                <div class="focus-item">
+                  <span class="focus-item-icon">🚀</span>
+                  <span class="focus-item-text">Professional Development</span>
+                </div>
+                <div class="focus-item">
+                  <span class="focus-item-icon">🌱</span>
+                  <span class="focus-item-text">Personal Growth</span>
+                </div>
+                <div class="focus-item">
+                  <span class="focus-item-icon">🔍</span>
+                  <span class="focus-item-text">Strategic Analysis</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STRENGTHS SECTION
+         ========================================================================== -->
+    <section class="section section-alt" id="strengths">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">
+            <span>Core Attributes</span>
+          </div>
+          <h2 class="section-title">Key Strengths</h2>
+          <p class="section-subtitle">The personal qualities and work ethic that shape how I collaborate, learn, and lead.</p>
+        </div>
+
+        <div class="strengths-grid">
+          
+          <div class="strength-card reveal delay-1">
+            <div class="strength-icon-box">⏳</div>
+            <h3 class="strength-title">Patience</h3>
+            <p class="strength-desc">
+              Approaching complex problems with calm focus, steady deliberation, and emotional resilience.
+            </p>
+          </div>
+
+          <div class="strength-card reveal delay-2">
+            <div class="strength-icon-box">💼</div>
+            <h3 class="strength-title">Hardworking</h3>
+            <p class="strength-desc">
+              Dedicated to putting in diligent, thorough, and consistent effort into every academic milestone.
+            </p>
+          </div>
+
+          <div class="strength-card reveal delay-3">
+            <div class="strength-icon-box">💡</div>
+            <h3 class="strength-title">Creativity</h3>
+            <p class="strength-desc">
+              Bringing fresh ideas, visual clarity, and imaginative perspectives to discussions and projects.
+            </p>
+          </div>
+
+          <div class="strength-card reveal delay-4">
+            <div class="strength-icon-box">📖</div>
+            <h3 class="strength-title">Willingness to Learn</h3>
+            <p class="strength-desc">
+              Constantly seeking new knowledge, embracing constructive feedback, and expanding horizons.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PERSONAL GROWTH SECTION
+         ========================================================================== -->
+    <section class="section" id="growth">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">
+            <span>Continuous Improvement</span>
+          </div>
+          <h2 class="section-title">Personal Growth</h2>
+          <p class="section-subtitle">Actively developing skills and embracing new challenges with optimism.</p>
+        </div>
+
+        <div class="growth-card reveal delay-1">
+          <div class="growth-header">
+            <div>
+              <h3 style="font-size: 1.65rem; color: var(--color-primary); margin-bottom: 0.25rem;">
+                Communication Skills
+              </h3>
+              <p style="color: var(--color-text-muted); font-size: 0.98rem;">
+                Focusing on clarity, active articulation, and impactful presentation.
+              </p>
+            </div>
+            <span class="growth-badge">
+              <span>⚡</span> Currently Improving
+            </span>
+          </div>
+
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.8;">
+            I believe that true professional development comes from acknowledging areas for improvement. I am actively working on becoming a clearer, more confident, and effective communicator—stepping outside my comfort zone in group presentations, active discussions, and collaborative projects.
+          </p>
+
+          <!-- 4-Step Development Roadmap -->
+          <div class="growth-roadmap">
+            <div class="roadmap-step">
+              <div class="roadmap-step-num">1</div>
+              <div class="roadmap-step-title">Active Listening</div>
+              <p class="roadmap-step-desc">Absorbing context and understanding diverse viewpoints with empathy.</p>
+            </div>
+
+            <div class="roadmap-step">
+              <div class="roadmap-step-num">2</div>
+              <div class="roadmap-step-title">Structured Dialogue</div>
+              <p class="roadmap-step-desc">Articulating thoughts with calm structure and clear reasoning.</p>
+            </div>
+
+            <div class="roadmap-step">
+              <div class="roadmap-step-num">3</div>
+              <div class="roadmap-step-title">Presentation Poise</div>
+              <p class="roadmap-step-desc">Sharing insights and recommendations with poise and preparation.</p>
+            </div>
+
+            <div class="roadmap-step">
+              <div class="roadmap-step-num">4</div>
+              <div class="roadmap-step-title">Confident Impact</div>
+              <p class="roadmap-step-desc">Building lasting confidence in professional and academic environments.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERESTS SECTION
+         ========================================================================== -->
+    <section class="section section-alt" id="interests">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">
+            <span>Passions &amp; Hobbies</span>
+          </div>
+          <h2 class="section-title">Interests &amp; Inspiration</h2>
+          <p class="section-subtitle">How I discover fresh perspectives and recharge my creative energies.</p>
+        </div>
+
+        <div class="interests-grid">
+          
+          <!-- Travelling Card -->
+          <div class="interest-card reveal delay-1">
+            <div class="interest-banner banner-travel">
+              <div class="banner-decor-ring"></div>
+              <span class="banner-icon-large">✈️</span>
+            </div>
+            <div class="interest-body">
+              <h3 class="interest-title">Travelling</h3>
+              <p class="interest-desc">
+                Exploring new places broadens my worldview and inspires adaptable thinking. Experiencing different cultures and environments teaches me resilience, curiosity, and an appreciation for diverse human experiences.
+              </p>
+              <div class="interest-tags">
+                <span class="interest-tag">🗺️ Exploration</span>
+                <span class="interest-tag">🌍 Cultural Perspective</span>
+                <span class="interest-tag">🎒 Journey &amp; Discovery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photography Card -->
+          <div class="interest-card reveal delay-2">
+            <div class="interest-banner banner-photography">
+              <div class="banner-decor-ring"></div>
+              <span class="banner-icon-large">📷</span>
+            </div>
+            <div class="interest-body">
+              <h3 class="interest-title">Photography</h3>
+              <p class="interest-desc">
+                Photography allows me to observe subtle details that often go unnoticed. Framing moments through the lens enhances my patience, eye for balance, and visual creativity.
+              </p>
+              <div class="interest-tags">
+                <span class="interest-tag">📸 Framing &amp; Detail</span>
+                <span class="interest-tag">🎨 Visual Composition</span>
+                <span class="interest-tag">👁️ Observational Eye</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MY AMBITION SECTION
+         ========================================================================== -->
+    <section class="section" id="ambition">
+      <div class="container">
+        <div class="ambition-card reveal">
+          <div class="ambition-badge">
+            <span>Vision &amp; Future</span>
+          </div>
+          
+          <h2 class="ambition-statement">
+            "Learning today. Growing every day. <span>Building a confident tomorrow.</span>"
+          </h2>
+          
+          <p class="ambition-text">
+            My ambition is to develop into a competent, thoughtful, and confident management professional. By combining rigorous academic study with genuine curiosity and hands-on experience, I strive to make meaningful contributions and achieve steady, lasting progress.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT / FINAL CTA SECTION
+         ========================================================================== -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="badge-pill">
+            <span>Get in Touch</span>
+          </div>
+          
+          <h2 class="contact-title">Let's connect.</h2>
+          
+          <p class="contact-subtitle">
+            I am always open to meaningful academic conversations, professional networking, mentorship, and opportunities to learn.
+          </p>
+
+          <div class="contact-buttons-flex">
+            <a href="mailto:#" class="btn btn-primary contact-action-btn" id="contact-email-btn" onclick="handleEmailClick(event)">
+              <span>✉️ Email</span>
+              <span class="btn-icon">↗</span>
+            </a>
+            
+            <a href="#" class="btn btn-secondary contact-action-btn" id="contact-linkedin-btn" onclick="handleLinkedInClick(event)">
+              <span>💼 LinkedIn</span>
+              <span class="btn-icon">↗</span>
+            </a>
+          </div>
+
+          <p class="contact-note">
+            Professional inquiries and student networking welcome.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-flex">
+        <p class="footer-copy">
+          &copy; 2026 Aditi. All rights reserved.
+        </p>
+        
+        <button class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top">
+          <span>Back to top</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Toast Notification Element -->
+  <div class="toast-notification" id="toast-msg">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">Action triggered!</span>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT INTERACTIONS
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Hamburger Menu Toggle
+      const navToggle = document.getElementById('nav-toggle-btn');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('open');
+          navToggle.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close mobile menu when link is clicked
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. Navbar Background on Scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // 3. Active Nav Link Scroll Spy
+      const sections = document.querySelectorAll('section[id]');
+      function updateActiveNav() {
+        const scrollY = window.pageYOffset;
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 130;
+          const sectionId = current.getAttribute('id');
+          const navItem = document.querySelector(`.nav-links a[href*='${sectionId}']`);
+          
+          if (navItem) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+              navItem.classList.add('active');
+            } else {
+              navItem.classList.remove('active');
+            }
+          }
+        });
+      }
+      window.addEventListener('scroll', updateActiveNav);
+
+      // 4. Scroll Reveal with Intersection Observer
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(reveal => {
+          revealObserver.observe(reveal);
+        });
+      } else {
+        // Fallback for older browsers
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // 5. Back to Top Button
+      const backToTopBtn = document.getElementById('back-to-top-btn');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+
+    // 6. Toast Notification Helper
+    function showToast(message, icon = '✨') {
+      const toast = document.getElementById('toast-msg');
+      const toastText = document.getElementById('toast-text');
+      const toastIcon = document.getElementById('toast-icon');
+      
+      if (!toast || !toastText) return;
+      
+      toastText.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // 7. Contact Handlers
+    function handleEmailClick(e) {
+      e.preventDefault();
+      showToast('Email placeholder: Connect with Aditi directly via email!', '✉️');
+    }
+
+    function handleLinkedInClick(e) {
+      e.preventDefault();
+      showToast('LinkedIn placeholder: Professional profile link.', '💼');
+    }
+  </script>
+</body>
+</html>

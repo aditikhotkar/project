@@ -1,0 +1,111 @@
+Build a modern, professional, visually impressive ONE-PAGE personal portfolio website for me using only HTML, CSS, and JavaScript.
+
+PERSONAL DETAILS:
+- Name: Aditi
+- Current education: MMS student
+- Personality: Shy, hardworking, creative
+- Strength: Patience
+- Currently improving: Communication skills
+- Hobbies/interests: Travelling and photography
+- Current focus: Studies and personal growth
+- Desired impression: Ambitious and confident
+
+DESIGN DIRECTION:
+Create a premium, professional student portfolio—not a generic template.
+The design should feel elegant, modern, minimal, and confident.
+Use a sophisticated color palette such as navy/charcoal/white with one subtle accent color.
+Use plenty of whitespace, clean typography, smooth transitions, and tasteful animations.
+Make it fully responsive for desktop, tablet, and mobile.
+
+PAGE STRUCTURE:
+
+1. HERO SECTION
+- Large heading: "Hi, I'm Aditi."
+- Subtitle: "MMS Student | Creative Thinker | Aspiring Professional"
+- Short introduction:
+  "A hardworking and creative MMS student who is passionate about learning, personal growth, and building a confident professional future."
+- Add two CTA buttons:
+  "About Me" and "My Journey"
+- Include a stylish profile/avatar area on the right. If no photo is available, create an elegant placeholder instead of using a random person's photo.
+
+2. ABOUT ME
+Create a short, natural introduction:
+"I’m Aditi, an MMS student with a curious mind and a strong desire to grow. I may be naturally shy, but I believe confidence is something that can be developed with consistent effort. I value patience, creativity, and continuous learning."
+
+Make this section visually engaging with a small "Who I Am" card.
+
+3. MY JOURNEY / EDUCATION
+Show:
+- MMS — Current
+- Focus: Business, management, professional development and personal growth
+
+Present this as a clean timeline or modern card.
+
+4. STRENGTHS
+Create attractive cards for:
+- Patience
+- Hardworking
+- Creativity
+- Willingness to Learn
+
+Each card should have a simple icon and a short one-line explanation.
+
+5. PERSONAL GROWTH
+Highlight:
+"Communication Skills — Currently Improving"
+
+Explain positively that I am working on becoming a clearer, more confident, and effective communicator.
+
+Add a subtle progress-style visual, but DO NOT invent a fake percentage or statistic.
+
+6. INTERESTS
+Create visual cards for:
+- ✈️ Travelling
+- 📷 Photography
+
+Make this section visually interesting, using elegant image placeholders or CSS-based visuals if actual images aren't available.
+
+7. MY AMBITION
+Create a strong, visually prominent section with the statement:
+
+"Learning today. Growing every day. Building a confident tomorrow."
+
+Add a short paragraph about my ambition to develop professionally, become more confident, and make meaningful progress through learning and experience.
+
+8. FINAL CTA / CONTACT
+End with:
+"Let's connect."
+Include simple placeholder contact buttons for:
+- Email
+- LinkedIn
+
+Do not invent an email address, phone number, or LinkedIn URL. Use "#" or clearly marked placeholders.
+
+9. FOOTER
+"© 2026 Aditi. All rights reserved."
+
+TECHNICAL REQUIREMENTS:
+- Use semantic HTML5.
+- Keep everything in a single HTML file.
+- CSS can be inside a <style> tag and JavaScript inside a <script> tag.
+- No backend required.
+- No frameworks unless absolutely necessary.
+- Make the website responsive.
+- Add smooth scrolling.
+- Add subtle scroll-reveal animations using JavaScript/CSS.
+- Add hover effects to cards and buttons.
+- Add a sticky/floating navigation bar.
+- Navigation links should smoothly scroll to sections.
+- Include a mobile-friendly hamburger menu.
+- Ensure good accessibility and readable contrast.
+- Use modern CSS such as Flexbox/Grid, gradients, shadows, border-radius, and transitions where appropriate.
+- Keep animations subtle and professional, not flashy.
+- Optimize the layout so it looks polished on both 1920px desktop screens and mobile phones.
+- Do not use lorem ipsum.
+- Do not invent achievements, job experience, certifications, statistics, or personal information.
+- Make all text sound natural and human, not AI-generated.
+
+IMPORTANT:
+The final result should feel like a real professional portfolio for an ambitious MMS student named Aditi. Prioritize visual quality, spacing, typography, responsiveness, and personality over adding unnecessary sections.
+
+After creating the HTML, make sure there are no broken links, layout issues, console errors, or missing elements.
