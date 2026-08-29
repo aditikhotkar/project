@@ -9,7 +9,7 @@
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Aditi | Personal Portfolio" />
-  <meta property="og:description" content="MMS Student | Creative Thinker | Aspiring Professional" />
+  <meta property="og:description" content="MMS Student & Creative Thinker | Aspiring Professional" />
   <meta property="og:type" content="website" />
 
   <!-- Google Fonts: Playfair Display for editorial elegance & Plus Jakarta Sans for clean modern readability -->
@@ -297,7 +297,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.65rem;
-      padding: 0.9rem 2rem;
+      padding: 0.9rem 2.2rem;
       border-radius: var(--radius-full);
       font-family: var(--font-sans);
       font-size: 0.95rem;
@@ -312,39 +312,43 @@
       user-select: none;
     }
 
-    .btn-primary {
+    .primary-btn, .btn-primary {
       background: var(--color-primary);
       color: var(--color-bg);
       box-shadow: var(--shadow-md);
     }
 
+    [data-theme="dark"] .primary-btn,
     [data-theme="dark"] .btn-primary,
+    [data-theme="navy"] .primary-btn,
     [data-theme="navy"] .btn-primary {
       background: var(--color-accent);
       color: #0B111E;
       font-weight: 700;
     }
 
-    .btn-primary:hover {
+    .primary-btn:hover, .btn-primary:hover {
       background: var(--color-primary-light);
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg), 0 0 20px var(--color-accent-glow);
     }
 
+    [data-theme="dark"] .primary-btn:hover,
     [data-theme="dark"] .btn-primary:hover,
+    [data-theme="navy"] .primary-btn:hover,
     [data-theme="navy"] .btn-primary:hover {
       background: var(--color-accent-soft);
       color: #0B111E;
     }
 
-    .btn-secondary {
+    .secondary-btn, .btn-secondary {
       background: var(--color-card);
       border-color: var(--color-border);
       color: var(--color-primary);
       box-shadow: var(--shadow-sm);
     }
 
-    .btn-secondary:hover {
+    .secondary-btn:hover, .btn-secondary:hover {
       background: var(--color-bg-alt);
       border-color: var(--color-accent);
       color: var(--color-accent);
@@ -352,16 +356,7 @@
       box-shadow: var(--shadow-md);
     }
 
-    .btn-icon {
-      font-size: 1.05rem;
-      transition: transform 0.25s ease;
-    }
-
-    .btn:hover .btn-icon {
-      transform: translateX(4px);
-    }
-
-    /* White / Dark Cards */
+    /* Cards */
     .card {
       background: var(--color-card);
       border: 1px solid var(--color-border);
@@ -557,90 +552,94 @@
     }
 
     /* ==========================================================================
-       HERO SECTION
+       PROFILE / HERO SECTION
        ========================================================================== */
     .hero {
-      padding-top: calc(var(--nav-height) + 5.5rem);
+      padding-top: calc(var(--nav-height) + 5rem);
       padding-bottom: 6rem;
       min-height: 92vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
     }
 
-    .hero-grid {
+    .hero-content {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.75rem;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 3.5rem;
       align-items: center;
     }
 
-    .hero-content {
+    .hero-text {
       max-width: 620px;
     }
 
-    .hero-title {
+    .hero-text .intro {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-text h1 {
       font-size: clamp(3rem, 5.5vw, 4.5rem);
+      font-family: var(--font-serif);
       font-weight: 700;
       line-height: 1.12;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--color-primary);
       letter-spacing: -0.02em;
     }
 
-    .hero-title .name-highlight {
-      color: var(--color-primary);
-      font-style: italic;
-      position: relative;
-      display: inline-block;
+    .hero-text h1 span {
+      color: var(--color-accent);
+      font-style: normal;
     }
 
-    .hero-title .name-highlight::after {
-      content: '';
-      position: absolute;
-      bottom: 8px;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background: var(--color-accent-subtle);
-      z-index: -1;
-      border-radius: 4px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
+    .hero-text h2 {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-family: var(--font-sans);
       font-weight: 700;
       color: var(--color-accent);
       margin-bottom: 1.5rem;
-      font-family: var(--font-sans);
       letter-spacing: 0.01em;
     }
 
     .hero-description {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       line-height: 1.8;
       color: var(--color-text-muted);
       margin-bottom: 2.25rem;
       max-width: 540px;
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: flex;
       gap: 1.15rem;
       flex-wrap: wrap;
       align-items: center;
     }
 
-    /* Hero Portrait Area with Floating Badges */
-    .hero-portrait-wrapper {
+    /* Profile Container & Frame */
+    .profile-container {
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* Subtle Backdrop Glow */
-    .hero-backdrop-glow {
+    /* Ambient Backdrop Glow */
+    .profile-glow {
       position: absolute;
       width: 380px;
       height: 480px;
@@ -656,109 +655,44 @@
       100% { transform: scale(1.08); opacity: 1; }
     }
 
-    /* Large Rounded-Rectangle Portrait Frame */
-    .portrait-frame {
+    /* Modern Profile Frame with Image */
+    .profile-frame {
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 330px;
-      height: 440px;
+      max-width: 340px;
+      height: 450px;
       background: var(--color-card);
       border-radius: var(--radius-xl);
       padding: 10px;
       border: 1px solid var(--color-border);
       box-shadow: var(--shadow-lg), 0 0 35px var(--color-accent-subtle);
       transition: var(--transition-smooth);
+      overflow: hidden;
     }
 
-    .portrait-frame:hover {
+    .profile-frame:hover {
       border-color: var(--color-accent);
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg), 0 0 45px var(--color-accent-glow);
     }
 
-    .portrait-inner {
+    .profile-frame img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center top;
       border-radius: calc(var(--radius-xl) - 8px);
-      background: linear-gradient(145deg, var(--color-bg-alt) 0%, var(--color-card) 60%, var(--color-bg-alt) 100%);
-      border: 1px solid var(--color-border-subtle);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem 1.5rem;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Monogram Visual Avatar Placeholder */
-    .portrait-monogram-circle {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: var(--color-card);
-      border: 2px solid var(--color-border);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      position: relative;
+    .profile-frame:hover img {
+      transform: scale(1.03);
     }
 
-    .portrait-monogram-circle::after {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px dashed var(--color-accent);
-      opacity: 0.6;
-      animation: rotateRings 25s linear infinite;
-    }
-
-    @keyframes rotateRings {
-      100% { transform: rotate(360deg); }
-    }
-
-    .portrait-monogram-text {
-      font-family: var(--font-serif);
-      font-size: 3.6rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--color-primary);
-      line-height: 1;
-    }
-
-    .portrait-meta-name {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .portrait-meta-tag {
-      font-size: 0.85rem;
-      color: var(--color-accent);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.85rem;
-    }
-
-    .portrait-divider {
-      width: 45px;
-      height: 2px;
-      background: var(--color-accent);
-      opacity: 0.5;
-      border-radius: 2px;
-      margin: 0 auto;
-    }
-
-    /* Floating Information Cards */
-    .floating-card {
+    /* Profile Floating Cards */
+    .profile-card {
       position: absolute;
       z-index: 2;
       background: var(--color-card);
@@ -774,13 +708,13 @@
       transition: var(--transition-smooth);
     }
 
-    .floating-card:hover {
+    .profile-card:hover {
       transform: scale(1.05);
       border-color: var(--color-accent);
       box-shadow: var(--shadow-lg);
     }
 
-    .floating-icon-box {
+    .profile-card > span {
       width: 38px;
       height: 38px;
       border-radius: 10px;
@@ -791,38 +725,35 @@
       justify-content: center;
       font-size: 1.15rem;
       border: 1px solid rgba(var(--color-accent-rgb), 0.25);
+      flex-shrink: 0;
     }
 
-    .floating-text-primary {
+    .profile-card strong {
+      display: block;
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--color-primary);
       line-height: 1.2;
     }
 
-    .floating-text-sub {
+    .profile-card small {
+      display: block;
       font-size: 0.75rem;
       color: var(--color-text-muted);
       font-weight: 500;
+      margin-top: 2px;
     }
 
-    /* Positions & Floating Keyframe Animations */
-    .float-card-1 {
-      top: 15px;
-      left: -35px;
+    .card-one {
+      top: 25px;
+      left: -30px;
       animation: floatMotion1 5s ease-in-out infinite alternate;
     }
 
-    .float-card-2 {
-      top: 48%;
-      right: -40px;
+    .card-two {
+      bottom: 30px;
+      right: -30px;
       animation: floatMotion2 6s ease-in-out infinite alternate;
-    }
-
-    .float-card-3 {
-      bottom: 20px;
-      left: -20px;
-      animation: floatMotion3 5.5s ease-in-out infinite alternate;
     }
 
     @keyframes floatMotion1 {
@@ -833,11 +764,6 @@
     @keyframes floatMotion2 {
       0% { transform: translateY(0px) rotate(0deg); }
       100% { transform: translateY(10px) rotate(1deg); }
-    }
-
-    @keyframes floatMotion3 {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-6px) rotate(1deg); }
     }
 
     /* ==========================================================================
@@ -1662,13 +1588,13 @@
        RESPONSIVE DESIGN (MEDIA QUERIES)
        ========================================================================== */
     @media (max-width: 992px) {
-      .hero-grid {
+      .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 4rem;
+        gap: 3.5rem;
       }
       
-      .hero-content {
+      .hero-text {
         margin: 0 auto;
       }
 
@@ -1677,11 +1603,11 @@
         margin-right: auto;
       }
 
-      .hero-actions {
+      .hero-buttons {
         justify-content: center;
       }
 
-      .hero-portrait-wrapper {
+      .profile-container {
         margin-top: 1rem;
       }
 
@@ -1733,18 +1659,19 @@
         display: none;
       }
 
-      .float-card-1 {
+      .card-one {
         left: -10px;
-        top: 5px;
+        top: 10px;
       }
 
-      .float-card-2 {
+      .card-two {
         right: -10px;
+        bottom: 15px;
       }
 
-      .float-card-3 {
-        left: -10px;
-        bottom: 5px;
+      .profile-frame {
+        max-width: 300px;
+        height: 400px;
       }
 
       .about-values-grid {
@@ -1766,31 +1693,31 @@
     }
 
     @media (max-width: 480px) {
-      .hero-title {
+      .hero-text h1 {
         font-size: 2.75rem;
       }
 
-      .portrait-frame {
-        max-width: 290px;
-        height: 390px;
+      .profile-frame {
+        max-width: 270px;
+        height: 360px;
       }
 
-      .floating-card {
+      .profile-card {
         padding: 0.6rem 0.85rem;
         gap: 0.5rem;
       }
 
-      .floating-icon-box {
+      .profile-card > span {
         width: 32px;
         height: 32px;
         font-size: 1rem;
       }
 
-      .floating-text-primary {
+      .profile-card strong {
         font-size: 0.8rem;
       }
 
-      .floating-text-sub {
+      .profile-card small {
         font-size: 0.7rem;
       }
     }
@@ -1804,7 +1731,7 @@
   <header class="navbar" id="navbar">
     <div class="container">
       <nav class="nav-wrapper" aria-label="Main Navigation">
-        <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Aditi Portfolio Home">
+        <a href="#home" class="nav-logo" id="nav-logo" aria-label="Aditi Portfolio Home">
           <span class="nav-signature">Aditi</span>
         </a>
 
@@ -1823,7 +1750,7 @@
             <span id="theme-icon">🌙</span>
           </button>
           
-          <a href="#contact" class="btn btn-primary nav-cta" id="nav-contact-btn">Connect</a>
+          <a href="#contact" class="btn primary-btn nav-cta" id="nav-contact-btn">Connect</a>
           <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -1836,90 +1763,56 @@
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION (Personal Profile with Portrait Frame & Floating Badges)
+         PROFILE / HERO SECTION
          ========================================================================== -->
-    <section class="section hero" id="hero">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Left Hero Content -->
-          <div class="hero-content reveal">
-            <div class="badge-pill">
-              <span class="badge-pill-dot"></span>
-              <span>Personal Portfolio</span>
-            </div>
-            
-            <h1 class="hero-title">
-              Hi, I'm <span class="name-highlight">Aditi.</span>
-            </h1>
-            
-            <p class="hero-subtitle">
-              MMS Student | Creative Thinker | Aspiring Professional
-            </p>
-            
-            <p class="hero-description">
-              A hardworking and creative MMS student who is passionate about learning, personal growth, and building a confident professional future.
-            </p>
-            
-            <div class="hero-actions">
-              <a href="#about" class="btn btn-primary" id="hero-about-btn">
-                <span>About Me</span>
-                <span class="btn-icon">↓</span>
-              </a>
-              <a href="#journey" class="btn btn-secondary" id="hero-journey-btn">
-                <span>My Journey</span>
-                <span class="btn-icon">→</span>
-              </a>
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <div class="hero-text reveal">
+          <p class="intro">HELLO, I'M</p>
+
+          <h1>Aditi<span>.</span></h1>
+
+          <h2>MMS Student &amp; Creative Thinker</h2>
+
+          <p class="hero-description">
+            A hardworking and creative MMS student who is passionate about
+            learning, personal growth, and building a confident professional future.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#about" class="btn primary-btn">About Me</a>
+            <a href="#journey" class="btn secondary-btn">My Journey</a>
+          </div>
+        </div>
+
+        <div class="profile-container reveal delay-2">
+
+          <!-- Replace profile.jpg with your actual photo -->
+          <div class="profile-glow"></div>
+
+          <div class="profile-frame">
+            <img src="profile.jpg" alt="Aditi - MMS Student">
+          </div>
+
+          <div class="profile-card card-one">
+            <span>🎓</span>
+            <div>
+              <strong>MMS Student</strong>
+              <small>Learning &amp; Growing</small>
             </div>
           </div>
 
-          <!-- Right Hero Portrait Frame Area with Floating Badges -->
-          <div class="hero-portrait-wrapper reveal delay-2">
-            <!-- Ambient Glow Backdrop -->
-            <div class="hero-backdrop-glow"></div>
-            
-            <!-- Large Rounded-Rectangle Portrait Frame -->
-            <div class="portrait-frame">
-              <div class="portrait-inner">
-                <div class="portrait-monogram-circle">
-                  <span class="portrait-monogram-text">A</span>
-                </div>
-                <h2 class="portrait-meta-name">Aditi</h2>
-                <p class="portrait-meta-tag">MMS Scholar</p>
-                <div class="portrait-divider"></div>
-              </div>
+          <div class="profile-card card-two">
+            <span>✨</span>
+            <div>
+              <strong>Creative Mind</strong>
+              <small>Always Exploring</small>
             </div>
-
-            <!-- Floating Card 1: MMS Scholar -->
-            <div class="floating-card float-card-1">
-              <div class="floating-icon-box">🎓</div>
-              <div>
-                <div class="floating-text-primary">MMS Student</div>
-                <div class="floating-text-sub">Management Scholar</div>
-              </div>
-            </div>
-
-            <!-- Floating Card 2: Creative Mind -->
-            <div class="floating-card float-card-2">
-              <div class="floating-icon-box">✨</div>
-              <div>
-                <div class="floating-text-primary">Creative Mind</div>
-                <div class="floating-text-sub">Thoughtful Perspective</div>
-              </div>
-            </div>
-
-            <!-- Floating Card 3: Continuous Growth -->
-            <div class="floating-card float-card-3">
-              <div class="floating-icon-box">🌱</div>
-              <div>
-                <div class="floating-text-primary">Always Learning</div>
-                <div class="floating-text-sub">Continuous Growth</div>
-              </div>
-            </div>
-
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -2153,8 +2046,8 @@
     </section>
 
     <!-- ==========================================================================
-         INTERESTS SECTION
-         ========================================================================== -->
+       INTERESTS SECTION
+       ========================================================================== -->
     <section class="section section-alt" id="interests">
       <div class="container">
         <div class="section-header reveal">
@@ -2247,12 +2140,12 @@
           </p>
 
           <div class="contact-buttons-flex">
-            <button class="btn btn-primary contact-action-btn" id="contact-email-btn" onclick="openContactModal()">
+            <button class="btn primary-btn contact-action-btn" id="contact-email-btn" onclick="openContactModal()">
               <span>✉️ Send Message</span>
               <span class="btn-icon">↗</span>
             </button>
             
-            <a href="#" class="btn btn-secondary contact-action-btn" id="contact-linkedin-btn" onclick="handleLinkedInClick(event)">
+            <a href="#" class="btn secondary-btn contact-action-btn" id="contact-linkedin-btn" onclick="handleLinkedInClick(event)">
               <span>💼 LinkedIn</span>
               <span class="btn-icon">↗</span>
             </a>
@@ -2293,11 +2186,11 @@
         </div>
 
         <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
-          <button type="submit" class="btn btn-primary" style="flex: 1;">
+          <button type="submit" class="btn primary-btn" style="flex: 1;">
             <span>Send Message</span>
             <span>✉️</span>
           </button>
-          <button type="button" class="btn btn-secondary" onclick="copyContactEmail()" title="Copy Email Address">
+          <button type="button" class="btn secondary-btn" onclick="copyContactEmail()" title="Copy Email Address">
             <span>Copy Email</span>
             <span>📋</span>
           </button>
