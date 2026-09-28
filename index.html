@@ -1506,16 +1506,6 @@
        RESPONSIVE DESIGN (MEDIA QUERIES)
        ========================================================================== */
     @media (max-width: 992px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3.5rem;
-      }
-      
-      .hero-text {
-        margin: 0 auto;
-      }
-
       .hero-description {
         margin-left: auto;
         margin-right: auto;
@@ -1523,10 +1513,6 @@
 
       .hero-buttons {
         justify-content: center;
-      }
-
-      .profile-container {
-        margin-top: 1rem;
       }
 
       .about-card-container {
@@ -1577,22 +1563,6 @@
         display: none;
       }
 
-      .card-one {
-        left: -10px;
-        top: 10px;
-      }
-
-      .card-two {
-        right: -10px;
-        bottom: 15px;
-      }
-
-      .profile-frame {
-        max-width: 320px;
-        min-height: 420px;
-        padding: 2rem 1.5rem 1.75rem;
-      }
-
       .about-values-grid {
         grid-template-columns: 1fr;
       }
@@ -1613,32 +1583,25 @@
 
     @media (max-width: 480px) {
       .hero-text h1 {
-        font-size: 2.75rem;
+        font-size: 2.65rem;
       }
 
-      .profile-frame {
-        max-width: 290px;
-        min-height: 390px;
-        padding: 1.75rem 1.25rem 1.5rem;
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
       }
 
-      .profile-card {
-        padding: 0.6rem 0.85rem;
-        gap: 0.5rem;
+      .hero-buttons .btn {
+        width: 100%;
       }
 
-      .profile-card > span {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
+      .hero-highlights {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .profile-card strong {
-        font-size: 0.8rem;
-      }
-
-      .profile-card small {
-        font-size: 0.7rem;
+      .hero-highlight-pill {
+        justify-content: center;
       }
     }
   </style>
@@ -1689,7 +1652,10 @@
       <div class="hero-content">
 
         <div class="hero-text reveal">
-          <p class="intro">HELLO, I'M</p>
+          <div class="hero-badge-pill">
+            <span class="badge-pill-dot"></span>
+            <span>MMS Student • Creative Thinker</span>
+          </div>
 
           <h1>Aditi<span>.</span></h1>
 
@@ -1703,56 +1669,24 @@
           <div class="hero-buttons">
             <a href="#about" class="btn primary-btn">About Me</a>
             <a href="#journey" class="btn secondary-btn">My Journey</a>
-          </div>
-        </div>
-
-        <div class="profile-container reveal delay-2">
-
-          <div class="profile-glow"></div>
-
-          <div class="profile-frame">
-            <!-- Monogram Emblem with Dynamic Outer Ring -->
-            <div class="monogram-emblem">
-              <div class="monogram-ring-outer"></div>
-              <div class="monogram-ring-inner">
-                <span class="monogram-letter">A</span>
-              </div>
-            </div>
-
-            <!-- Profile Info Block -->
-            <div class="profile-info-block">
-              <div class="profile-tag-pill">
-                <span>✦</span> MMS Scholar
-              </div>
-              <h3 class="profile-name-title">Aditi</h3>
-              <p class="profile-name-desc">Creative Thinker &amp; Future Leader</p>
-            </div>
-
-            <!-- Core Trait Pills -->
-            <div class="profile-traits">
-              <div class="trait-badge"><span>⏳</span> Patience</div>
-              <div class="trait-badge"><span>💼</span> Diligence</div>
-              <div class="trait-badge"><span>💡</span> Creativity</div>
-              <div class="trait-badge"><span>🌱</span> Growth</div>
-            </div>
+            <a href="#contact" class="btn secondary-btn" onclick="openContactModal()">Let's Connect</a>
           </div>
 
-          <div class="profile-card card-one">
-            <span>🎓</span>
-            <div>
-              <strong>MMS Student</strong>
-              <small>Learning &amp; Growing</small>
+          <!-- Hero Highlight Attributes -->
+          <div class="hero-highlights">
+            <div class="hero-highlight-pill">
+              <span>🎓</span> MMS Postgraduate
+            </div>
+            <div class="hero-highlight-pill">
+              <span>⏳</span> Patience &amp; Diligence
+            </div>
+            <div class="hero-highlight-pill">
+              <span>💡</span> Creative Problem Solving
+            </div>
+            <div class="hero-highlight-pill">
+              <span>🌱</span> Continuous Growth
             </div>
           </div>
-
-          <div class="profile-card card-two">
-            <span>✨</span>
-            <div>
-              <strong>Creative Mind</strong>
-              <small>Always Exploring</small>
-            </div>
-          </div>
-
         </div>
 
       </div>
